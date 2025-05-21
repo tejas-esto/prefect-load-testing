@@ -22,7 +22,7 @@ def elevator_flow():
 
 if __name__ == "__main__":
     deployment_name = "_".join([Path(__file__).stem, "test", "deployment"])
-    schedules = [CronSchedule(cron="30 * * * *", timezone="Europe/Tallinn")]
+    schedules = [CronSchedule(cron="00 * * * *", timezone="Europe/Tallinn")]
     elevator_flow.serve(
         name=deployment_name,
         schedules=schedules,

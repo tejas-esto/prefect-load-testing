@@ -3,7 +3,7 @@ from prefect.client.schemas.schedules import CronSchedule
 from prefect import flow
 
 
-@flow
+@flow(log_prints=True)
 def bye_flow(name: str = "Marvin"):
     print(f"Bye {name}!")
 

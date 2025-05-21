@@ -1,12 +1,16 @@
 from pathlib import Path
 from prefect.client.schemas.schedules import CronSchedule
 from prefect.blocks.system import Secret
-from prefect import flow
+from prefect import flow, task
+
+@task
+def print_secret():
+    random_secret = Secret.load("random-secret-string").get()
+    print(random_secret)
 
 @flow(log_prints=True)
 def blocks_flow():
-    random_secret = Secret.load("random-secret-string").get()
-    print(random_secret)
+    print_secret()
 
 
 if __name__ == "__main__":
