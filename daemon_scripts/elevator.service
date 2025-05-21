@@ -2,8 +2,8 @@
 Description=Daemonized service to run elevator.py
 
 [Service]
-User=ubuntu
-WorkingDirectory=/home/ubuntu/prefect-load-testing/
+User=ec2-user
+WorkingDirectory=/home/ec2-user/prefect-load-testing/
 ExecStart=/bin/bash -c "source .venv/bin/activate && export PYTHONPATH=. && python ./elevator.py"
 Restart=always
 
