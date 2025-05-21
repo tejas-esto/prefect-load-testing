@@ -1,7 +1,7 @@
 [project]
 name = "prefect-load-testing"
 version = "0.1.0"
-description = "Add your description here"
+description = "Just some simple flows here to test the stability of a self-hosted server"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [

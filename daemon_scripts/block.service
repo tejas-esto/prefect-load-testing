@@ -1,0 +1,11 @@
+[Unit]
+Description=Daemonized service to run block.py
+
+[Service]
+User=ubuntu
+WorkingDirectory=/home/ubuntu/prefect-load-testing/
+ExecStart=/bin/bash -c "source .venv/bin/activate && export PYTHONPATH=. && python ./block.py"
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,11 @@
+[Unit]
+Description=Daemonized service to run bye.py
+
+[Service]
+User=ubuntu
+WorkingDirectory=/home/ubuntu/prefect-load-testing/
+ExecStart=/bin/bash -c "source .venv/bin/activate && export PYTHONPATH=. && python ./bye.py"
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
