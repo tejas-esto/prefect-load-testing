@@ -1,0 +1,11 @@
+[Unit]
+Description=Daemonized service to run multideploy.py
+
+[Service]
+User=ec2-user
+WorkingDirectory=/home/ec2-user/prefect-load-testing/
+ExecStart=/bin/bash -c "source .venv/bin/activate && export PYTHONPATH=. && python ./multideploy.py"
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
