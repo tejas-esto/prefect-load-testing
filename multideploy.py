@@ -18,7 +18,7 @@ crons_slugs = [
 def log(cron_str: str):
     print(cron_str)
 
-@flow
+@flow(log_prints=True)
 def random_flow(cron_str: str):
     log(cron_str)
 
